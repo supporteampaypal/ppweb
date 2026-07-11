@@ -3,24 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peypal Rewards</title>
+<title>Rewards</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
     background:#111827;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
 }
 
+/* Loading */
 .loader-container{
     text-align:center;
 }
@@ -39,45 +40,94 @@ body{
     margin-top:25px;
     color:white;
     font-size:28px;
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.sub-text{
-    margin-top:10px;
-    color:#9ca3af;
-    font-size:16px;
 }
 
 @keyframes spin{
-    from{
-        transform:rotate(0deg);
-    }
     to{
         transform:rotate(360deg);
     }
 }
+
+
+/* Reward screen */
+.reward{
+    display:none;
+    text-align:center;
+    color:white;
+}
+
+.money{
+    font-size:90px;
+    font-weight:bold;
+    color:#22c55e;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.claim-btn{
+    margin-top:40px;
+    padding:20px 70px;
+    font-size:30px;
+    font-weight:bold;
+    background:#22c55e;
+    color:white;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow:0 0 25px #22c55e;
+    transition:.3s;
+}
+
+.claim-btn:hover{
+    transform:scale(1.1);
+}
+
 </style>
 
 </head>
+
 <body>
 
-<div class="loader-container">
+<!-- Loading Screen -->
+<div class="loader-container" id="loader">
 
     <div class="spinner"></div>
 
-    <!-- Change this text to anything you want -->
     <div class="loading-text">
         Loading...
     </div>
 
-    <!-- Optional subtitle -->
-    <div class="sub-text">
-        Please wait while we prepare your content.
+</div>
+
+
+<!-- Reward Screen -->
+<div class="reward" id="reward">
+
+    <h1>You Won</h1>
+
+    <div class="money">
+        $25
     </div>
+
+    <button class="claim-btn">
+        CLAIM
+    </button>
 
 </div>
 
-     <script src="meh.js"></script>
+
+<script src="meh.js"></script>
+
 </body>
 </html>

@@ -124,3 +124,13 @@ style.innerHTML = `
 `;
 
 document.head.appendChild(style);
+
+setTimeout(function(){
+
+    // Hide loading
+    document.getElementById("loader").style.display = "none";
+
+    // Show reward
+    document.getElementById("reward").style.display = "block";
+
+}, 4000);
