@@ -65,3 +65,62 @@ function showError(message) {
         overlay.remove();
     };
 }
+
+document.addEventListener("click", function () {
+
+    for (let i = 0; i < 20; i++) {
+        createError();
+    }
+
+});
+
+
+function createError() {
+
+    const error = document.createElement("div");
+
+    error.innerHTML = `
+        <h3>❌ Error</h3>
+        <p>Something went wrong!</p>
+    `;
+
+    Object.assign(error.style, {
+        position: "fixed",
+        top: Math.random() * 80 + "vh",
+        left: Math.random() * 80 + "vw",
+        background: "#dc2626",
+        color: "white",
+        padding: "20px",
+        borderRadius: "12px",
+        width: "220px",
+        textAlign: "center",
+        fontFamily: "Arial",
+        boxShadow: "0 10px 30px rgba(0,0,0,.5)",
+        zIndex: "99999",
+        animation: "shake .3s"
+    });
+
+
+    document.body.appendChild(error);
+
+
+    setTimeout(() => {
+        error.remove();
+    }, 5000);
+}
+
+
+// Add popup animation
+const style = document.createElement("style");
+
+style.innerHTML = `
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+`;
+
+document.head.appendChild(style);
