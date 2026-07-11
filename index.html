@@ -13,12 +13,24 @@
     font-family:Arial, sans-serif;
 }
 
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
+}
+
 body{
-    background:#111827;
-    height:100vh;
+    background-image: url("peypal.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     display:flex;
     justify-content:center;
     align-items:center;
+    height:100vh;
 }
 
 /* Loading */
